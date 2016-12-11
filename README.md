@@ -23,7 +23,27 @@ Or install it yourself as:
 ``` ruby
 require "rrxcell"
 
-# some examples here
+#--------------------#
+# Excelx file with '.xlsx'
+path = File.expand_path("PATH/TO/FILE.xlsx")
+book = Rrxcell.load(path)
+
+puts book.sheet(0).row(0).column(0).value
+# => "Sheet1!A1"
+
+puts book[0][1][2].value
+# => "Sheet1!C2"
+
+#--------------------#
+# Excelx file with '.xls'
+path = File.expand_path("PATH/TO/FILE.xls")
+book = Rrxcell.load(path)
+
+puts book.sheet(0).row(0).column(0).value
+# => "Sheet1!A1"
+
+puts book[0][1][2].value
+# => "Sheet1!C2"
 
 ```
 
