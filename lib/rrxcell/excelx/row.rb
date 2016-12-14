@@ -7,6 +7,6 @@ class Rrxcell::Excelx::Row < Rrxcell::Row
   end
   
   def object
-    @sheet.object.row(@position + 1)
+    sheet.object.row(position + 1)
   end
 end

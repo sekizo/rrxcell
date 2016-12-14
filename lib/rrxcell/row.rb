@@ -11,6 +11,10 @@ class Rrxcell::Row
     column(position)
   end
   
+  def book
+    sheet.book
+  end
+  
   def column(position)
     raise ShouldBeImplementedError
   end

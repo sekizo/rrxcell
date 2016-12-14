@@ -3,7 +3,7 @@ require "rrxcell/book"
 
 class Rrxcell::Excelx::Book < Rrxcell::Book
   def object
-    @object ||= Roo::Excelx.new(@path)
+    @object ||= Roo::Excelx.new(path)
   end
   
   def sheet(position)
