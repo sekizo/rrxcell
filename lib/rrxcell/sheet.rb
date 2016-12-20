@@ -7,11 +7,15 @@ class Rrxcell::Sheet
     @position = position
   end
   
-  def [](position)
-    row(position)
+  def [](row_position)
+    row(row_position)
   end
   
-  def row(position)
+  def object
+    raise ShouldBeImplementedError
+  end
+  
+  def row(row_position)
     raise ShouldBeImplementedError
   end
 end

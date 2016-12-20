@@ -1,7 +1,7 @@
 shared_examples "sheet" do
-  let(:position) { 0 }
   let(:book) { Rrxcell.load(path) }
-  let(:sheet) { book.sheet(0) }
+  let(:sheet) { book.sheet(position) }
+  let(:position) { 0 }
   
   describe '#row' do
     subject { sheet.row(position) }

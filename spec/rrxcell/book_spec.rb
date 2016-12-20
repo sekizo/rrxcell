@@ -2,7 +2,7 @@ require "spec_helper"
 
 describe Rrxcell::Book do
   let(:book) { Rrxcell.load(path) }
-  let(:path) { File.join(Rrxcell::ROOT, "example/book.xlsx") }
+  let(:path) { XLSX_PATH }
   
   it_behaves_like "book_interface"
   
