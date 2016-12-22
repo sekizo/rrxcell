@@ -25,7 +25,8 @@ require "rrxcell"
 
 #--------------------#
 # Excelx file with '.xlsx'
-path = File.expand_path("PATH/TO/FILE.xlsx")
+# Excel file with '.xls'
+path = File.expand_path("PATH/TO/FILE.xlsx") # or "PATH/TO/FILE.xls"
 book = Rrxcell.load(path)
 
 puts book.sheet(0).row(0).column(0).value
@@ -34,16 +35,18 @@ puts book.sheet(0).row(0).column(0).value
 puts book[0][1][2].value
 # => "Sheet1!C2"
 
-#--------------------#
-# Excelx file with '.xls'
-path = File.expand_path("PATH/TO/FILE.xls")
-book = Rrxcell.load(path)
+puts book.address("Sheet1!B2").value
+# => "Sheet1!B2"
 
-puts book.sheet(0).row(0).column(0).value
-# => "Sheet1!A1"
+puts book.sheet(0).address("B2").value
+# => "Sheet1!B2"
 
-puts book[0][1][2].value
-# => "Sheet1!C2"
+puts book.sheet_names
+# => ["Sheet1"]
+
+puts book.sheet("Sheet1").address("AB3").value
+# => "Sheet1!AB3"
+
 
 ```
 
